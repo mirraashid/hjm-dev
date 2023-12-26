@@ -79,7 +79,7 @@ $displayTypeSelect .= '</select></div>';
 ?>
 
 <form action="/" method="get" class="searchform row" style="align-items: center;">
-	<div class="column-flex-1"><label for="search" class="screen-reader-text">Search</label><input type="text" name="s" id="search" value="<?php the_search_query(); ?>" placeholder="Search HJM..." required></div>
+	<div class="column-flex-1"><label for="search" class="screen-reader-text">Search</label><input type="text" name="s" id="search" value="<?php the_search_query(); ?>" placeholder="Find HJM content.." required></div>
 
 <?php
 
@@ -111,11 +111,13 @@ $select = wp_dropdown_categories($tagArgs);
 */
 
 echo <<<EOD
-<div class="column-flex-0" style="display: flex; align-items: center;"><input type="submit" value="" class="button button-secondary"></div>
+<div class="column-flex-0" style="display: flex; align-items: center;"><input type="submit" value="Search" class="button button-secondary"></div>
 
-<div class="column-flex-0" style="display: flex; align-items: center; justify-content: center;"><small class="last"><a href="$advancedSearchPermalink">Advanced&nbsp;Search</a></small></div>
 
-</form>
+
+</form><div class="adv-search-div" style="">
+<small class="last"><a href="$advancedSearchPermalink">Advanced&nbsp;Search</a></small>
+</div>
 EOD;
 
 ?>

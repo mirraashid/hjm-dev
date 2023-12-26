@@ -142,7 +142,7 @@ EOD;
 <body <?php body_class(); ?>>
 
 <?php //echo $displayHeaderWidget; ?>
-<header>
+<header class="fixed-top">
 	<div class="flex-container">
 		<a href="<?php echo get_bloginfo('url'); ?>">
 			<img src="<?php echo get_bloginfo('template_url'); ?>/images/logo.png" alt="HJM - Health Justice Monitor" id="logo">
@@ -165,30 +165,51 @@ EOD;
 					<li><a href="#">Subscribe</a></li>
 				</ul> -->
 			</nav>
-			<div id="search-conainer">
-				<input class="search-input" type="text" placeholder="Find HJM content...">
-				<input class="search-input" type="text" placeholder="Any content type">
-				<button class="button-primary">Search</button>
+			<div class="mobile-menu">
+
+			<div class="hamburger-menu">
+				<input id="menu__toggle" type="checkbox" />
+				<label class="menu__btn" for="menu__toggle">
+				<span></span>
+				</label>
+				<?php
+				wp_nav_menu(array(
+					'menu' => 'Primary Nav',
+					'container' => false,
+					'menu_class' => 'menu__box'
+				));
+				?>
+
+				<!-- <ul class="menu__box">
+				<li><a class="menu__item" href="#">Home</a></li>
+				<li><a class="menu__item" href="#">About</a></li>
+				<li><a class="menu__item" href="#">Team</a></li>
+				<li><a class="menu__item" href="#">Contact</a></li>
+				<li><a class="menu__item" href="#">Twitter</a></li>
+				</ul> -->
 			</div>
+			</div>
+			<!-- <div id="search-conainer">
+				<input class="search-input" type="text" placeholder="Find HJM content...">
+				
+				<select name="type">
+					<option value="">Any Content Type</option>
+					<option value="post">Post</option>
+					<option value="visual">Visual</option>
+					<option value="faq">FAQ</option>
+				</select>
+				<button class="button-primary">Search</button>
+			</div> -->
+			<?php if (!is_page('search') && !is_page(1140) && !is_page(1254) && !is_tag()) { ?>
+				<div id="search-bar">
+				<?php
+				if (!is_page('search')) {
+					get_search_form();
+				}
+				?>
+				</div>
+				<?php } ?>
 		</div>
 	</div>
-	<div style="text-align: center;">
-		<h1>Demystifying Single Payer</h1>
-		<p>Resources for understanding US health care and how to fix it.</p>
-		<div class="hero-bubble">
-			<div class="clickable-bubbles">What is Single Payer?</div>
-		</div>
-		<div class="hero-bubble">
-			<div class="clickable-bubbles">Senate Bills</div>
-		</div>
-		<div class="hero-bubble">
-			<div class="clickable-bubbles">Public Opinion</div>
-		</div>
-		<div class="hero-bubble">
-			<div class="clickable-bubbles">2022 Annual Review</div>
-		</div>
-		<div class="hero-bubble">
-			<div class="clickable-bubbles">Physician Support</div>
-		</div>
-	</div>
+	
 </header>
