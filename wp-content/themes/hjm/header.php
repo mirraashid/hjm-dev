@@ -7,6 +7,10 @@ $css = get_stylesheet_directory_uri()."/style.css";
 $cssLastModified = filemtime(get_template_directory()."/style.css");
 $css .= "?$cssLastModified";
 
+$css1 = get_stylesheet_directory_uri()."/style1.css";
+$cssLastModified1 = filemtime(get_template_directory()."/style1.css");
+$css1 .= "?$cssLastModified1";
+
 $displayLogo = '<img class="logo" src="/wp-content/themes/hjm/images/logo.png" alt="'.$siteName.'">';
 if (!is_front_page()) { 
     $displayLogo = '<a href="/"><img class="logo" src="/wp-content/themes/hjm/images/logo.png" alt="'.$siteName.'"></a>';
@@ -30,6 +34,13 @@ product: http://ogp.me/ns/product#">
 <link rel="dns-prefetch" href="//www.youtube.com">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 <link rel="stylesheet" href="<?=$css;?>">
+<link rel="stylesheet" href="<?php echo $css1; ?>">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -130,88 +141,54 @@ EOD;
 </head>
 <body <?php body_class(); ?>>
 
-<?php echo $displayHeaderWidget; ?>
-
-<div id="doc" class="container">
-
-<div id="mobile-menu">
-
-	<div style="display:flex; flex-direction:column; justify-content:space-between; height: 100%;"><div style="flex:0;">
-
-		<div class="gutter" style="margin-top:1rem;">
-		<div class="row row-on-mobile" style="align-items: center;">
-		<div class="column-flex-0">
-<?php echo $displayLogo; ?>
+<?php //echo $displayHeaderWidget; ?>
+<header>
+	<div class="flex-container">
+		<a href="<?php echo get_bloginfo('url'); ?>">
+			<img src="<?php echo get_bloginfo('template_url'); ?>/images/logo.png" alt="HJM - Health Justice Monitor" id="logo">
+		</a>
+		<div>
+			<nav>
+				<?php
+				wp_nav_menu(array(
+					'menu' => 'Primary Nav',
+					'container' => false,
+				));
+				?>
+				<!-- <ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Topics</a></li>
+					<li><a href="#">Ai-Chat</a></li>
+					<li><a href="#">Posts</a></li>
+					<li><a href="#">FAQs</a></li>
+					<li><a href="#">Visuals</a></li>
+					<li><a href="#">Subscribe</a></li>
+				</ul> -->
+			</nav>
+			<div id="search-conainer">
+				<input class="search-input" type="text" placeholder="Find HJM content...">
+				<input class="search-input" type="text" placeholder="Any content type">
+				<button class="button-primary">Search</button>
+			</div>
 		</div>
-		<div class="column-flex-1" style="text-align:right;">
-<a href="#" class="fwdlabs-toggle" data-toggle="#mobile-menu"><img src="/wp-content/themes/hjm/images/close.svg" alt="Close" height="24" width="24" style="margin:0 0.5rem 1rem; line-height: 1.5;"></a>
-<!--<p style="font-size: 1rem; font-weight: 300; line-height: 1.5;">X</p>-->
-		</div>
-		</div>
-		</div>
-
 	</div>
-	<div style="flex:1; display: flex; align-items: center; justify-content: center; flex-direction: column;">
-
-		<div class="row" style="flex-direction:column; align-items: center;">	
-<?php
-$mobileMenuItems = wp_get_nav_menu_items( 'Primary Nav' );
-foreach ( $mobileMenuItems as $menuItem ) {
-	$menuItemTitle = $menuItem->title;
-	$menuItemPermalink = $menuItem->url;
-	// echo print_r($menuItem, true);
-	echo '<div class="flex-column-1"><a href="'.$menuItemPermalink.'" class="h2">'.$menuItemTitle.'</a></div>';
-}
-?>
-		
+	<div style="text-align: center;">
+		<h1>Demystifying Single Payer</h1>
+		<p>Resources for understanding US health care and how to fix it.</p>
+		<div class="hero-bubble">
+			<div class="clickable-bubbles">What is Single Payer?</div>
 		</div>
-
-	</div></div>
-
-</div>
-
-<header id="hd"><div class="gutter">
-
-<div class="row row-on-mobile">
-<div class="column-flex-0">
-<?php
-
-echo $displayLogo;
-
-?>
-</div>
-<div class="column-flex-1" style="display: flex; align-items: flex-end; justify-content: center; flex-direction:column;">
-<?php
-
-$mobileMenu = "";
-if (!is_page('search') && !is_page(1140) && !is_page(1254) && !is_tag()) {
-	$mobileMenu .= '<li class="mobile-only"><a href="#" class="fwdlabs-toggle" data-toggle="#search-bar"><img src="/wp-content/themes/hjm/images/search.svg" alt="Search" height="24" width="24"></a></li>';
-}
-$mobileMenu .= '<li class="mobile-only"><a href="#" class="fwdlabs-toggle" data-toggle="#mobile-menu"><img src="/wp-content/themes/hjm/images/menu.svg" alt="Menu" height="24" width="24"></a></li>';
-
-wp_nav_menu( array(
-	'menu' => 'Primary Nav',
-    'container' => false,
-	'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s'.$mobileMenu.'</ul>'
-) );
-
-?>
-
-<?php if (!is_page('search') && (is_page(1140) || is_page(1254) || is_tag())) { ?>
-	<small class="last"><a href="/search/">Advanced Search</a></small>
-<?php } ?>
-
-</div>
-</div>
-
-<?php if (!is_page('search') && !is_page(1140) && !is_page(1254) && !is_tag()) { ?>
-<div id="search-bar">
-<?php
-if (!is_page('search')) {
-	get_search_form();
-}
-?>
-</div>
-<?php } ?>
-
-</div></header><!-- /#hd -->
+		<div class="hero-bubble">
+			<div class="clickable-bubbles">Senate Bills</div>
+		</div>
+		<div class="hero-bubble">
+			<div class="clickable-bubbles">Public Opinion</div>
+		</div>
+		<div class="hero-bubble">
+			<div class="clickable-bubbles">2022 Annual Review</div>
+		</div>
+		<div class="hero-bubble">
+			<div class="clickable-bubbles">Physician Support</div>
+		</div>
+	</div>
+</header>
