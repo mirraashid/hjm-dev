@@ -17,7 +17,7 @@ if ($type == "") {
 	if ('faq' == get_post_type()) { $type = "faq"; }
 }
 
-$advancedSearchPermalink = "/search/";
+$advancedSearchPermalink = get_bloginfo('url')."/search/";
 if ($type <> "" && in_array($type, $allowedTypes)) { $advancedSearchPermalink .= "?type=$type"; }
 
 /*
