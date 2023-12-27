@@ -78,30 +78,97 @@ echo '<main id="bd">';
 
 
 <div>
-            <div class="visual-slider">
-                <h2 class="bold">Visualize Health Care</h2>
-                <div class="owl-carousel">
-					<?php
-						$query = new WP_Query(array('posts_per_page'=>5,'cat' => 53));
-						if($query->have_posts()):while($query->have_posts()):$query->the_post(); ?>
-						<div class="item"> 
-						<?php
-							$thumbnail = get_the_post_thumbnail_url(get_the_ID(), "medium");
-						?>
-						<img src="<?php echo $thumbnail; ?>"/>
-						</div>
-						<?php
-						endwhile; endif;
-					?>
-					
-					
-                </div>
-                <div class="visuals-btn-wrap">
-				<a href="<?php echo get_bloginfo('url'); ?>/visuals" class="btn-icon floatright">See all visuals <img src="<?php echo get_bloginfo('template_url'); ?>/images/arrow-right.png"></a>
-					<div style="clear:both;"></div>
-                </div>
-            </div>
-        </div>
+	<div class="visual-slider">
+		<h2 class="bold">Visualize Health Care</h2>
+		<div class="owl-carousel">
+			<?php
+			$query = new WP_Query(array('posts_per_page'=>5,'cat' => 53));
+			if($query->have_posts()):while($query->have_posts()):$query->the_post(); ?>
+				<div class="item"> 
+				<?php
+				$thumbnail = get_the_post_thumbnail_url(get_the_ID(), "medium");
+				?>
+				<img src="<?php echo $thumbnail; ?>"/>
+				</div>
+			<?php endwhile; endif; ?>
+		</div>
+		<div class="visuals-btn-wrap">
+			<a href="<?php echo get_bloginfo('url'); ?>/visuals" class="btn-icon floatright">See all visuals <img src="<?php echo get_bloginfo('template_url'); ?>/images/arrow-right.png"></a>
+			<div style="clear:both;"></div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<div class="container">
+	<div class="faq">
+		<h4>Frequently asked questions</h4>
+		<div class="faq-container accordion">
+			<?php
+				$faq_args = array(
+					'post_type' => 'faq',
+					'posts_per_page' => 6,
+					'meta_key' => 'views',
+					'orderby' => 'meta_value_num',
+					'order' => 'DESC'
+				);
+				$query = new WP_Query($faq_args);
+				if($query->have_posts()):while($query->have_posts()):$query->the_post();
+				?>
+				<div class="accordion-item">
+				<button aria-expanded="false"><span class="accordion-title"><?php echo get_the_title(); ?></span><span class="icon" aria-hidden="true"></span></button>
+					<div class="accordion-content">
+						<p><?php echo get_the_excerpt(); ?></p>
+					</div>
+				</div>
+				<?php
+				endwhile;endif;
+				wp_reset_query();
+			?>
+			<!-- <div class="faq-item">
+				<button class="faq-question">What other countries have tried single payer?</button>
+				<div class="faq-answer">
+					<p>Content for the answer...</p>
+				</div>
+			</div>
+			<div class="faq-item">
+				<button class="faq-question">Who finances for single payer?</button>
+				<div class="faq-answer">
+					<p>Content for the answer...</p>
+				</div>
+			</div>
+			<div class="faq-item">
+				<button class="faq-question">Would doctors make less under single payer?</button>
+				<div class="faq-answer">
+					<p>Content for the answer...</p>
+				</div>
+			</div>
+			
+			<div class="faq-item">
+				<button class="faq-question">Will patient choice be reduced under SP?</button>
+				<div class="faq-answer">
+					<p>Content for the answer...</p>
+				</div>
+			</div>
+			
+			<div class="faq-item">
+				<button class="faq-question">What about all the insurance industry jobs?</button>
+				<div class="faq-answer">
+					<p>Content for the answer...</p>
+				</div>
+			</div>
+			
+			<div class="faq-item">
+				<button class="faq-question">Does single payer equal socialism?</button>
+				<div class="faq-answer">
+					<p>Content for the answer...</p>
+				</div>
+			</div> -->
+		</div>
+	</div>
+</div>
 
 
 <?php
