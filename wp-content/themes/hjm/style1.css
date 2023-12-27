@@ -594,4 +594,13 @@ header .searchform input[type=submit]:hover{
     .mobile-menu{
         display: block;
     }
+    ul.homepage-tags li{
+      margin: 10px;
+    }
+    ul.homepage-tags li a{
+      padding: 5px 16px;
+      border-radius: 30px;
+      font-size: 14px;
+      line-height: 18px;
+    }
   }
