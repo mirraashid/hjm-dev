@@ -1,5 +1,14 @@
 jQuery(document).ready(function($){
 
+  jQuery(window).scroll(function(){
+    if (jQuery(this).scrollTop() > 120) {
+      jQuery('header').addClass('fixed');
+    } else {
+      jQuery('header').removeClass('fixed');
+    }
+});
+
+
     jQuery(".fwdlabs-toggle").click(function(e) {
 		e.preventDefault();
 		var selector = $(this).data('toggle');

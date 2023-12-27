@@ -7,9 +7,21 @@ header {
     background: linear-gradient(180deg, #FFF0ED 9.9%, #FFF 100%);
 }
 
-body.admin-bar header.fixed-top{
+body.admin-bar header.fixed-top .head-wrap{
     top:30px;
 }
+
+header.fixed{
+  width: 100%;
+  position: fixed;
+  top: 30px;
+  height: 140px;
+}
+header{
+  transition: height .5s ease-in;  
+  height: 160px;
+}
+
 
 .flex-container {
     display: flex;
@@ -332,12 +344,12 @@ header .searchform input[type=submit]:hover{
    font-size: 11px;
 }
 
-.fixed-top{
+/* .fixed-top .head-wrap{
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-}
+} */
 
 #bd{
     margin-top: 200px;
@@ -427,6 +439,7 @@ header .searchform input[type=submit]:hover{
 
   .home-main-heading{
     text-align: center;
+    background: #fff;
   }
 
 

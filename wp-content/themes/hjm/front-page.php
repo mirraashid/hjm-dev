@@ -5,25 +5,7 @@ get_header();
 echo '<main id="bd">';
 
 ?>
-<div class="home-main-heading">
-		<h1>Demystifying Single Payer</h1>
-		<p>Resources for understanding US health care and how to fix it.</p>
-		<div class="hero-bubble">
-			<div class="clickable-bubbles">What is Single Payer?</div>
-		</div>
-		<div class="hero-bubble">
-			<div class="clickable-bubbles">Senate Bills</div>
-		</div>
-		<div class="hero-bubble">
-			<div class="clickable-bubbles">Public Opinion</div>
-		</div>
-		<div class="hero-bubble">
-			<div class="clickable-bubbles">2022 Annual Review</div>
-		</div>
-		<div class="hero-bubble">
-			<div class="clickable-bubbles">Physician Support</div>
-		</div>
-	</div>
+
 <?php
 
 if (have_posts()) : while (have_posts()) : the_post();

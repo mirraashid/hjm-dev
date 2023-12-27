@@ -213,3 +213,38 @@ EOD;
 	</div>
 	
 </header>
+<?php
+if(is_front_page()){
+	
+	if (have_posts()) : while (have_posts()) : the_post();
+	?>
+	<div class="home-main-heading">
+		<h1><?php echo get_the_excerpt(); ?></h1>
+		<!-- <p>Resources for understanding US health care and how to fix it.</p> -->
+		<?php echo get_the_content(); ?>
+		<div class="hero-bubble">
+			<div class="clickable-bubbles">What is Single Payer?</div>
+		</div>
+		<div class="hero-bubble">
+			<div class="clickable-bubbles">Senate Bills</div>
+		</div>
+		<div class="hero-bubble">
+			<div class="clickable-bubbles">Public Opinion</div>
+		</div>
+		<div class="hero-bubble">
+			<div class="clickable-bubbles">2022 Annual Review</div>
+		</div>
+		<div class="hero-bubble">
+			<div class="clickable-bubbles">Physician Support</div>
+		</div>
+	</div>
+	<?php
+	endwhile;
+
+else:
+
+	// echo "<!-- else -->";
+
+endif;
+}
+?>
