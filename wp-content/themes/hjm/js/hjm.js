@@ -7,15 +7,13 @@ jQuery(document).ready(function($){
         margin:50,
         navText : ["<i class='fa fa-arrow-left'></i> Previous","Next <i class='fa fa-arrow-right'></i>"],
         nav:true,
-        responsive:{
-            0:{
-                items:1
+        items:1,
+         responsive: {
+            0: {
+                stagePadding: 0
             },
-            600:{
-                items:1
-            },
-            1000:{
-                items:1
+            768: {
+                stagePadding: 400
             }
         }
     })

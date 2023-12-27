@@ -591,6 +591,12 @@ header .searchform input[type=submit]:hover{
   }
 
   @media(max-width:800px){
+
+    .visuals-btn-wrap a{
+      position: relative;
+      top: auto;
+    }
+
     .mobile-menu{
         display: block;
     }
