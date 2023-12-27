@@ -33,8 +33,18 @@ product: http://ogp.me/ns/product#">
 <link rel="dns-prefetch" href="//fonts.googleapis.com">
 <link rel="dns-prefetch" href="//www.youtube.com">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="<?php echo get_bloginfo('template_url'); ?>/owlcarousel/owl.carousel.min.css">
+<link rel="stylesheet" href="<?php echo get_bloginfo('template_url'); ?>/owlcarousel/owl.theme.default.min.css">
+
+
 <link rel="stylesheet" href="<?=$css;?>">
 <link rel="stylesheet" href="<?php echo $css1; ?>">
+
+
+
 
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -222,7 +232,32 @@ if(is_front_page()){
 		<h1><?php echo get_the_excerpt(); ?></h1>
 		<!-- <p>Resources for understanding US health care and how to fix it.</p> -->
 		<?php echo get_the_content(); ?>
-		<div class="hero-bubble">
+		<ul class="homepage-tags">
+			<?php
+				// Check rows exists.
+			if( have_rows('header_buttons') ):
+
+				// Loop through rows.
+				while( have_rows('header_buttons') ) : the_row();
+
+					// Load sub field value.
+					$button_text = get_sub_field('button_text');
+					$button_url = get_sub_field('button_url');
+					?>
+					<li><a href="<?php echo $button_url; ?>"><?php echo $button_text; ?></a></li>
+					<?php
+					// Do something...
+
+				// End loop.
+				endwhile;
+
+			// No value.
+			else :
+				// Do something...
+			endif;
+			?>
+		</ul>
+		<!-- <div class="hero-bubble">
 			<div class="clickable-bubbles">What is Single Payer?</div>
 		</div>
 		<div class="hero-bubble">
@@ -236,7 +271,7 @@ if(is_front_page()){
 		</div>
 		<div class="hero-bubble">
 			<div class="clickable-bubbles">Physician Support</div>
-		</div>
+		</div> -->
 	</div>
 	<?php
 	endwhile;

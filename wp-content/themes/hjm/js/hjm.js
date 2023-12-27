@@ -1,5 +1,28 @@
 jQuery(document).ready(function($){
 
+    if(jQuery('.owl-carousel').length){
+      jQuery('.owl-carousel').owlCarousel({
+        stagePadding: 400,
+        loop:true,
+        margin:50,
+        navText : ["<i class='fa fa-arrow-left'></i> Previous","Next <i class='fa fa-arrow-right'></i>"],
+        nav:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:1
+            },
+            1000:{
+                items:1
+            }
+        }
+    })
+    }
+
+
+
   jQuery(window).scroll(function(){
     if (jQuery(this).scrollTop() > 120) {
       jQuery('header').addClass('fixed');

@@ -1,6 +1,11 @@
+html{
+  background: none;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     margin: 0px;
+  
 }
 
 header {
@@ -16,6 +21,7 @@ header.fixed{
   position: fixed;
   top: 30px;
   height: 140px;
+  z-index: 999999;
 }
 header{
   transition: height .5s ease-in;  
@@ -77,7 +83,17 @@ main {
 
 h1 {
     font-size: 2em;
-    color: #000;
+}
+
+h2.bold{
+  font-weight: 900;
+}
+
+.home h2{
+  font-size: 22px;
+  line-height: 30px;
+  color: rgba(0, 0, 0, 1);
+  font-family: 'Inter';
 }
 
 p {
@@ -119,12 +135,68 @@ p {
     line-height: normal;
 }
 
+.recent-posts-container{
+  /* text-align: center; */
+  padding: 10px 40px;
+}
+
+.floatright{
+  float: right;
+    margin: 0 0 1em 1em;
+}
+
+.visuals-btn-wrap{
+  position: relative;
+  z-index: 999;
+}
+
+.visuals-btn-wrap a{
+  position: absolute;
+  right: 20px;
+  top: -60px;
+}
+
+
+.visual-slider .owl-nav{
+  margin-top: 30px;
+}
+
+.visual-slider .owl-carousel .owl-nav button.owl-prev{
+  margin-right: 30px;
+}
+
+.visual-slider .owl-carousel .owl-nav button.owl-prev, .visual-slider .owl-carousel .owl-nav button.owl-next{
+  background: rgba(183, 183, 183, 1) !important;
+  color: #fff !important;
+  border: 1px solid rgba(208, 213, 221, 1) !important;
+  padding: 3px 8px !important;
+  display: inline-block !important;
+}
+
+
+.visual-slider .owl-carousel .owl-item img{
+  border: 2px solid rgba(195, 195, 195, 1);
+
+}
+
+a.btn-icon{
+  background: rgba(190, 32, 38, 1);
+  color: #fff;
+  font-size: 14px;
+  line-height: 18px;
+  padding: 10px;
+  display: inline-block;
+  margin-top: 10px;
+  border: 1px solid rgba(208, 213, 221, 1);
+  border-radius: 8px;
+}
+
 
 /* Post preview Style */
 .recent-posts {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 20px 20px;
     position: relative;
 }
@@ -132,7 +204,7 @@ p {
 .post-preview-card {
     position: relative;
     width: 400px;
-    height: 240px;
+    /* height: 240px; */
     background-color: #ffffff;
     border-radius: 8px;
     border: 1px solid;
@@ -155,8 +227,8 @@ p {
 
 .post-preview-card .text-wrapper {
     position: relative;
-    width: 389px;
-    height: 34px;
+    /* width: 389px;
+    height: 34px; */
     margin-top: -1px;
     font-family: "Inter-SemiBold", Helvetica;
     font-weight: 600;
@@ -166,12 +238,21 @@ p {
     line-height: 16px;
 }
 
+.post-preview-card .text-wrapper a{
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #252525;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: 28px;
+}
+
 .post-preview-card .div {
     position: relative;
     width: 389px;
     font-family: "Inter-Medium", Helvetica;
     font-weight: 500;
-    color: #3d3d3d;
+    color: rgba(62, 62, 62, 1);
     font-size: 12px;
     letter-spacing: 0;
     line-height: 16px;
@@ -233,7 +314,16 @@ p {
     justify-content: center;
     display: flex;
     flex-direction: column;
-    margin-top: 30px;
+    margin-top: 10px;
+}
+
+.card-calendar-wrap{
+  display: flex;
+  gap: 5px;
+}
+
+.card-calendar-wrap .calendar{
+  margin-left: auto;
 }
 
 .slider {
@@ -352,7 +442,7 @@ header .searchform input[type=submit]:hover{
 } */
 
 #bd{
-    margin-top: 200px;
+    margin-top: 40px;
 }
 
 #menu__toggle {
@@ -443,6 +533,56 @@ header .searchform input[type=submit]:hover{
   }
 
 
+  ul.homepage-tags{
+    list-style: none;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  ul.homepage-tags li{
+    display: inline-block;
+    margin: 20px;
+  }
+
+  ul.homepage-tags li a{
+    color: #595959;
+    border: 2px solid #424242;
+    padding: 10px 16px;
+    border-radius: 30px;
+  }
+  ul.homepage-tags li a:hover{
+    background: #BE2026;
+    color: #fff;
+    border-color: #BE2026;
+  }
+
+  .home-main-heading h1{
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    color: #2E2E2E;
+  }
+
+  ul.posttags{
+    list-style: none;
+    margin: 0;
+    overflow: auto;
+  }
+  .posttags li{
+    display: inline-block;
+    overflow: auto;
+    margin: 0;
+  }
+
+  .posttags li a, .posttags li span{
+    font-size: 10px;
+    color: rgba(0, 0, 0, 1);
+    font-family: 'inter';
+    font-weight: 400;
+    padding: 4px 8px;
+    line-height: 20px;
+    /* border: 1px solid; */
+    background: rgba(194, 222, 231, 1);
+    border-radius: 6px;
+  }
 
   @media(min-width:800px){
     .mobile-menu{

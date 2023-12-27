@@ -77,6 +77,8 @@ class HJM {
 		remove_action('wp_head', 'wp_print_head_scripts', 9);
 		remove_action('wp_head', 'wp_enqueue_scripts', 1);
 
+		
+
 		wp_enqueue_script( 'hjm-slick',
 			'/wp-content/themes/hjm/js/slick.min.js',
 			array( 'jquery' ),
@@ -84,11 +86,13 @@ class HJM {
 			true
 		);
 
+		wp_enqueue_script('owlcarouseljs',get_bloginfo('template_url').'/owlcarousel/owl.carousel.min.js', array('jquery'));
+
 		$js = get_stylesheet_directory_uri()."/js/hjm.js";
 		$jsLastModified = filemtime(get_template_directory()."/js/hjm.js");
 		wp_enqueue_script('hjm',
 			'/wp-content/themes/hjm/js/hjm.js',
-			array( 'jquery', 'hjm-slick' ), // Other scripts that we depend upon
+			array( 'jquery', 'hjm-slick','owlcarouseljs' ), // Other scripts that we depend upon
 			$jsLastModified,
 			true);
 
