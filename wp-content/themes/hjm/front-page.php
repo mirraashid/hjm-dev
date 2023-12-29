@@ -90,7 +90,7 @@ echo '<main id="bd">';
 				?>
 				<img src="<?php echo $thumbnail; ?>"/>
 				</div>
-			<?php endwhile; endif; ?>
+			<?php endwhile; endif; wp_reset_query(); ?>
 		</div>
 		<div class="visuals-btn-wrap">
 			<a href="<?php echo get_bloginfo('url'); ?>/visuals" class="btn-icon floatright">See all visuals <img src="<?php echo get_bloginfo('template_url'); ?>/images/arrow-right.png"></a>
@@ -107,14 +107,20 @@ echo '<main id="bd">';
 		<h2 class="bold">Frequently asked questions</h2>
 		<div class="faq-container accordion">
 			<?php
-				$faq_args = array(
-					'post_type' => 'faq',
-					'posts_per_page' => 6,
-					'meta_key' => 'views',
-					'orderby' => 'meta_value_num',
-					'order' => 'DESC'
-				);
-				$query = new WP_Query($faq_args);
+				// $faq_args = array(
+				// 	'post_type' => 'faq',
+				// 	'posts_per_page' => 6,
+				// 	'meta_key' => 'views',
+				// 	'orderby' => 'meta_value_num',
+				// 	'order' => 'DESC'
+				// );
+				// $query = new WP_Query($faq_args);
+
+				$featured_faqs = get_field('select_faqs');
+				
+				$args = array('post_type'=>'faq','post__in' => $featured_faqs,'posts_per_page'=>6,  'ignore_sticky_posts' => 1,'orderby' => 'post__in'  );
+				$query = new WP_Query($args);
+
 				if($query->have_posts()):while($query->have_posts()):$query->the_post();
 				?>
 				<div class="accordion-item">
