@@ -104,7 +104,7 @@ echo '<main id="bd">';
 
 <div class="container">
 	<div class="faq">
-		<h4>Frequently asked questions</h4>
+		<h2 class="bold">Frequently asked questions</h2>
 		<div class="faq-container accordion">
 			<?php
 				$faq_args = array(
@@ -170,6 +170,16 @@ echo '<main id="bd">';
 	</div>
 </div>
 
+
+<section>
+	<div class="gutter">
+		<h2 class="bold">Ask your own question!</h2>
+	<div class="iframe-wrap"><iframe src="https://widget.writesonic.com/CDN/index.html?service-base-url=https://api.botsonic.ai&amp;token=7174aca8-b181-4b2f-b132-406b824fd7bb&amp;base-origin=https://bot.writesonic.com&amp;instance-name=Botsonic&amp;standalone=true&amp;page-url=https://bot.writesonic.com/00db58eb-d803-4d19-a55c-01867f01add9?t=share&amp;workspace_id=4482bd9a-fa91-483c-8768-8d9a7c5d8ebc" frameborder="0">
+	</iframe></div>
+
+	</div>
+
+</section>
 
 <?php
 
