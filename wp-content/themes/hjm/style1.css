@@ -22,6 +22,13 @@ body.admin-bar header.fixed-top .head-wrap{
   width: 100%;
 }
 
+.container-1000{
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;
+}
+
 header.fixed{
   width: 100%;
   position: fixed;
@@ -734,6 +741,70 @@ header .searchform input[type=submit]:hover{
     color: #fff;
   }
 
+  #ft{
+    border:none;
+    background: linear-gradient(180deg, #FFF 9.9%, #FFF0ED 100%);
+    padding: 40px 0 20px;
+  }
+
+  #ft .mc-form{
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  #ft .mc-form .form-group{
+    display: inline-block;
+    width: 20%;
+    margin-right: 20px;
+  }
+
+  #ft .mc-form .form-group:nth-child(3){
+    width: 35%;
+  }
+
+  #ft .mc-form .form-group:nth-child(4){
+    width: 13%;
+  }
+
+  #ft ul.footer-pn-1,#ft ul.footer-pn-2{
+    text-align: center;
+  }
+
+  .footer-pn-1 li,.footer-pn-2 li{
+    display: inline-block;
+    /* margin-right: 20px; */
+    padding: 0 20px;
+  }
+
+  #ft .footer-pn-1 li a{
+    line-height: 20px;
+    color: rgba(21, 21, 21, 1);
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  #ft .footer-pn-2 li a{
+    line-height: 16px;
+    color: rgba(21, 21, 21, 1);
+    font-size: 11px;
+    font-weight: 400;
+  }
+
+  #ft ul li.current-menu-item a{
+    font-weight: 800;
+    border-bottom: 1px solid;
+  }
+
+#ft .newsletter-wrap p{
+  text-align: center;
+  margin: 30px 0 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+  .ai-chat .gutter{
+    border-bottom: 2px solid rgba(179, 179, 179, 0.5);
+  }
 
   @media(min-width:800px){
     .mobile-menu{
@@ -742,6 +813,41 @@ header .searchform input[type=submit]:hover{
   }
 
   @media(max-width:800px){
+
+    #ft ul.footer-pn-1, #ft ul.footer-pn-2{
+      width: 50%;
+      display: inline-block;
+      vertical-align: top;
+    }
+    .footer-pn-1 li, .footer-pn-2 li{
+      display: block;
+    
+    }
+
+    #ft .footer-pn-2 li a{
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    #ft .mc-form .form-group{
+      display: inline-block;
+      width: 48%;
+      margin: 0;
+      margin-top: 15px;
+      margin-right: 7px;
+    }
+    #ft .mc-form .form-group:nth-child(3){
+      width: 100%;
+      display:block;
+      margin-right: 7px;
+    }
+
+    #ft .mc-form .form-group:nth-child(4){
+      width: 100%;
+      display:block;
+      margin-right: 7px;
+      text-align: center;
+    }
 
     .visuals-btn-wrap a{
       position: relative;
@@ -753,6 +859,7 @@ header .searchform input[type=submit]:hover{
     }
     ul.homepage-tags li{
       margin: 10px;
+      margin-top: 0;
     }
     ul.homepage-tags li a{
       padding: 5px 16px;
