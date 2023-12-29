@@ -642,18 +642,18 @@ header .searchform input[type=submit]:hover{
     position: absolute;
     top: 18px;
     right: 0;
-    width: 22px;
-    height: 22px;
-    border: 1px solid;
+    width: 25px;
+    height: 25px;
+    /* border: 1px solid; */
     border-radius: 22px;
   }
   .accordion button .icon::before {
     display: block;
     position: absolute;
     content: "";
-    top: 9px;
-    left: 5px;
-    width: 10px;
+    top: 10px;
+    left: 6px;
+    width: 13px;
     height: 2px;
     background: currentColor;
   }
@@ -662,9 +662,9 @@ header .searchform input[type=submit]:hover{
     position: absolute;
     content: "";
     top: 5px;
-    left: 9px;
+    left: 12px;
     width: 2px;
-    height: 10px;
+    height: 13px;
     background: currentColor;
   }
   /* .accordion button[aria-expanded=true] {
@@ -692,6 +692,13 @@ header .searchform input[type=submit]:hover{
     margin: 2em 0;
   }
 
+
+  .accordion button[aria-expanded=true] .icon{
+    background: rgba(239, 199, 200, 1);
+    border: none;
+    border-radius: 2px;
+    color: #fff;
+  }
 
 
   @media(min-width:800px){
