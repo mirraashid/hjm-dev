@@ -1,4 +1,16 @@
 jQuery(document).ready(function($){
+  $(".m-search").click(function(){
+    $('#search-bar').slideToggle();
+  });
+  $(".menu__btn").click(function(){
+    $('#search-bar').slideUp('fast');
+  });
+});
+
+jQuery(document).ready(function($){
+  
+  
+
 
   const items = document.querySelectorAll(".accordion button");
 
@@ -39,8 +51,8 @@ jQuery(document).ready(function($){
 
 
 
-  jQuery(window).scroll(function(){
-    if (jQuery(this).scrollTop() > 120) {
+jQuery(window).scroll(function(){
+    if (jQuery(this).scrollTop() > 10) {
       jQuery('header').addClass('fixed');
     } else {
       jQuery('header').removeClass('fixed');
