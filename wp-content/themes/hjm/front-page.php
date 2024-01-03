@@ -127,18 +127,67 @@ echo '<main id="bd">';
 				
 				$args = array('post_type'=>'faq','post__in' => $featured_faqs,'posts_per_page'=>6,  'ignore_sticky_posts' => 1,'orderby' => 'post__in'  );
 				$query = new WP_Query($args);
-
+				$faq_arr = array();
 				if($query->have_posts()):while($query->have_posts()):$query->the_post();
+				$faq_arr[] = array('title'=> get_the_title(),'description' => get_the_excerpt());
 				?>
-				<div class="accordion-item">
+				<!-- <div class="accordion-item">
 				<button aria-expanded="false"><span class="accordion-title"><?php echo get_the_title(); ?></span><span class="icon" aria-hidden="true"></span></button>
 					<div class="accordion-content">
-						<p><?php echo get_the_excerpt(); ?></p>
+						<p><?php //echo get_the_excerpt(); ?></p>
 					</div>
-				</div>
+				</div> -->
 				<?php
 				endwhile;endif;
 				wp_reset_query();
+
+				if(!empty($faq_arr)){
+					$countRecords = count($faq_arr);
+					$col1 = array_slice($faq_arr, 0, $countRecords/2 + 0.5);
+					$col2 = array_slice($faq_arr, $countRecords/2 + 0.5, $countRecords);
+					$row = array("column1" => $col1, "column2" => $col2);
+					?>
+					<div class="single-column">
+						<?php
+						if(!empty($row['column1'])){
+							foreach($row['column1'] as $key => $val){
+								?>
+								<div class="accordion-item">
+									<button aria-expanded="false"><span class="accordion-title"><?php echo $val['title']; ?></span><span class="icon" aria-hidden="true"></span></button>
+										<div class="accordion-content">
+											<p><?php echo $val['description']; ?></p>
+										</div>
+								</div> 
+							<?php
+							}
+						}
+						?>
+					</div>
+					<div class="single-column">
+						<?php
+						if(!empty($row['column2'])){
+							foreach($row['column2'] as $key => $val){
+								?>
+								<div class="accordion-item">
+									<button aria-expanded="false"><span class="accordion-title"><?php echo $val['title']; ?></span><span class="icon" aria-hidden="true"></span></button>
+										<div class="accordion-content">
+											<p><?php echo $val['description']; ?></p>
+										</div>
+								</div> 
+							<?php
+							}
+						}
+						?>
+					</div>
+					<?php
+				}
+
+
+				
+				// echo "<pre>";
+				// print_r($row);
+				// die;
+
 			?>
 			<!-- <div class="faq-item">
 				<button class="faq-question">What other countries have tried single payer?</button>

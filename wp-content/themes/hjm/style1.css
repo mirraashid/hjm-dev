@@ -737,7 +737,13 @@ header .searchform input[type=submit]:hover{
     box-sizing: border-box;
     /* padding: 16px 36px; */
     box-shadow: 0 5px 16px rgb(8 15 52 / 6%);
+    margin-bottom: 10px;
   }
+
+  .accordion .single-column{
+    flex-basis: calc(50% - 16px);
+  }
+
   /* .accordion .accordion-item button[aria-expanded=true] {
     border-bottom: 1px solid #03b5d2;
   } */
@@ -1015,9 +1021,10 @@ header .searchform input[type=submit]:hover{
         margin: 6px 0;
     }
     .faq {padding: 10px;margin: 10px 0 0;}
-    .faq-container {padding: 0;border-radius: 0;background: transparent;gap: 10px;margin-bottom: 0;}
+    .faq-container {padding: 0;border-radius: 0;background: transparent;gap: 0px;margin-bottom: 0;}
     .home h2, .faq h2 {font-size: 20px;font-weight: 700;margin-bottom: 10px;}
-    .accordion .accordion-item {width: 100%;flex-basis: 100%;box-shadow: 0 0 4px #080f3470;}
+    .accordion .accordion-item {width: 100%;flex-basis: 100%;box-shadow: 0 0 4px #080f3470; margin-bottom: 10px;}
+    .accordion .single-column {width: 100%;flex-basis: 100%;}
     .accordion button {padding: 2em 4em 2em 1em;font-size: 14px;line-height: 20px;}
     .accordion button .icon {
         right: 20px;
