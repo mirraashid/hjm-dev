@@ -992,6 +992,14 @@ header .searchform input[type=submit]:hover{
     background: #be2026;
 }
 
+
+
+.home-banner-wrap img{
+  max-width: 100%;
+  height: auto;
+}
+
+
   @media screen and (max-width:800px) {
     .home-main-heading h1 {font-size: 45px;line-height: 48px;letter-spacing: 1px;}
     .recent-posts-container { padding: 0 10px;}

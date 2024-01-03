@@ -2,6 +2,13 @@
 
 get_header();
 
+if(!empty(get_field('banner_image'))){
+	?>
+	<div class="home-banner-wrap">
+		<img src="<?php echo get_field('banner_image'); ?>" alt="">
+	</div>
+	<?php
+}
 echo '<main id="bd">';
 
 ?>
