@@ -1,4 +1,9 @@
 jQuery(document).ready(function($){
+
+
+  
+
+
   $(".m-search").click(function(){
     $('#search-bar').slideToggle();
   });
@@ -32,7 +37,7 @@ jQuery(document).ready(function($){
 
     if(jQuery('.owl-carousel').length){
       jQuery('.owl-carousel').owlCarousel({
-        stagePadding: 400,
+        stagePadding: 350,
         loop:true,
         margin:50,
         navText : ["<i class='fa fa-arrow-left'></i> Previous","Next <i class='fa fa-arrow-right'></i>"],
@@ -40,10 +45,13 @@ jQuery(document).ready(function($){
         items:1,
          responsive: {
             0: {
-                stagePadding: 0
+                stagePadding: 0,
+                items:1,
+                margin:10
             },
             768: {
-                stagePadding: 400
+                stagePadding: 350,
+                items:1,
             }
         }
     })

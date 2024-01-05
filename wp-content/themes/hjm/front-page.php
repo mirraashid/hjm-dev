@@ -35,7 +35,9 @@ echo '<main id="bd">';
 							<?php echo wp_trim_words(get_the_content(),'40',' [...]'); ?>
 							
 						</p>
-						<div>
+						
+					</div>
+					<div class="posttags-wrap">
 							<?php
 								$posttags = get_the_tags();
 								
@@ -70,7 +72,6 @@ echo '<main id="bd">';
 								}
 							?>
 						</div>
-					</div>
 				</div>
 				<?php
 				endwhile;endif;
@@ -93,7 +94,7 @@ echo '<main id="bd">';
 			if($query->have_posts()):while($query->have_posts()):$query->the_post(); ?>
 				<div class="item"> 
 				<?php
-				$thumbnail = get_the_post_thumbnail_url(get_the_ID(), "medium");
+				$thumbnail = get_the_post_thumbnail_url(get_the_ID(), "full");
 				?>
 				<img src="<?php echo $thumbnail; ?>"/>
 				</div>

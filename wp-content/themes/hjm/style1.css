@@ -3,7 +3,7 @@ html{
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+  font-family: 'Raleway', sans-serif;
     margin: 0px;
   
 }
@@ -50,6 +50,8 @@ header{
     padding: 20px;
 }
 
+header .flex-container { padding:10px }
+
 #logo {
     max-width: 290px;
     height: auto;
@@ -68,7 +70,7 @@ nav ul li {
 nav ul li a {
     color: #151515;
     text-align: center;
-    font-family: Inter;
+    font-family: 'Raleway', sans-serif;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
@@ -100,14 +102,14 @@ h1 {
 }
 
 h2.bold{
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .home h2{
   font-size: 32px;
   line-height: 1.4;
   color: rgba(0, 0, 0, 1);
-  font-family: 'Inter';
+  font-family: 'Raleway', sans-serif;
   margin-bottom: 20px;
 }
 
@@ -141,7 +143,7 @@ p {
     position: relative;
     width: fit-content;
     margin-top: -2px;
-    font-family: "Inter-Regular", Helvetica;
+    font-family: 'Raleway', sans-serif;
     font-weight: 400;
     color: #595959;
     font-size: 18px;
@@ -182,15 +184,16 @@ p {
 }
 
 .visual-slider .owl-carousel .owl-nav button.owl-prev, .visual-slider .owl-carousel .owl-nav button.owl-next{
-  background: #B7B7B7 !important;
-  color: #fff !important;
-  border: 1px solid #D0D5DD !important;
-  padding: 9px !important;
+  /* background: #B7B7B7 !important; */
+  color: rgba(86, 86, 86, 1) !important;
+  border: 1px solid rgba(86, 86, 86, 1) !important;
+  padding: 2px 8px !important;
   display: inline-block !important;
   width: 120px;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 14px;
   border-radius: 8px;
+  line-height: 24px;
 }
 
 .visual-slider .owl-carousel .owl-item img {
@@ -309,10 +312,12 @@ div#search-bar {
     /* font-family: "Inter-Medium", Helvetica; */
     font-weight: 500;
     color: #3E3E3E;
-    font-size: 12px;
+    font-size: 14px;
     letter-spacing: 0;
-    line-height: 16px;
+    line-height: 18px;
+    /* min-height: 72px; */
 }
+
 
 .post-preview-card .div-wrapper {
     display: inline-flex;
@@ -335,7 +340,7 @@ div#search-bar {
     position: relative;
     width: fit-content;
     margin-top: -1px;
-    font-family: "Inter-Regular", Helvetica;
+    font-family: 'Raleway', sans-serif;
     font-weight: 400;
     color: #000000;
     font-size: 8px;
@@ -372,6 +377,7 @@ div#search-bar {
     /* display: flex; */
     /* flex-direction: column; */
     /* margin-top: 10px; */
+    margin-bottom: 35px;
 }
 
 .card-calendar-wrap{
@@ -490,6 +496,8 @@ height: 100%;
     align-items: flex-start;
   }
 
+  
+
 header .searchform input[type=submit] {
     background-image: url('images/search-white.svg');
     background-size: 23px auto;
@@ -505,7 +513,7 @@ header .searchform input[type=submit] {
     font-size: 14px;
     line-height: 24px;
     font-weight: 400;
-    padding: 5px 20px;
+    padding: 7px 20px;
     padding-left: 37px;
     padding-right: 15px;
     color: #fff;
@@ -539,6 +547,19 @@ header .searchform input[type=submit]:hover{
     /* font-weight: 400; */
     letter-spacing: .4px;
 }
+.searchform select{
+  -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    padding-right: 10px;
+    background-image: url('images/down-arrow.png');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) !important;
+    background-size: 10px;
+    padding: 9px 30px 9px 15px;
+}
+
+
 
 .adv-search-div a{
     text-decoration: underline;
@@ -686,7 +707,7 @@ header .searchform input[type=submit]:hover{
     margin: 0 0;
     font-weight: 600;
     text-shadow: 0 4px 4px rgb(0 0 0 / 10%);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Raleway', sans-serif;
     letter-spacing: 1px;
   }
   .home-main-heading p {
@@ -701,6 +722,8 @@ header .searchform input[type=submit]:hover{
     list-style: none;
     margin: 0;
     overflow: auto;
+    position: absolute;
+    bottom: 5px;
   }
   .posttags li{
     display: inline-block;
@@ -711,13 +734,14 @@ header .searchform input[type=submit]:hover{
   .posttags li a, .posttags li span{
     font-size: 10px;
     color: rgba(0, 0, 0, 1);
-    font-family: 'inter';
+    font-family: 'Raleway', sans-serif;
     font-weight: 400;
-    padding: 3px 8px;
+    padding: 0 8px;
     /* border: 1px solid; */
     background: rgba(194, 222, 231, 1);
     border-radius: 6px;
     display: block;
+    line-height: 24px;
   }
 
   .faq-answer *{
@@ -918,6 +942,7 @@ header .searchform input[type=submit]:hover{
     .mobile-menu{
         display: none;
     }
+    
   }
 
   @media(max-width:800px){
@@ -1150,6 +1175,7 @@ header .searchform input[type=submit]:hover{
 
 	ul.posttags {
 	    padding-bottom: 5px;
+      position: relative;
 	}
 
 	.visual-slider .owl-nav {
