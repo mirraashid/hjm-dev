@@ -50,7 +50,7 @@ header{
     padding: 20px;
 }
 
-header .flex-container { padding:10px }
+header .flex-container { padding-bottom:10px }
 
 #logo {
     max-width: 290px;
